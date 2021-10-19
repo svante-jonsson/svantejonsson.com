@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import {useTranslation} from 'react-i18next'
+import './i18n.js'
 
 function App() {
+  const { t, i18n } = useTranslation();
+  function toggleLanguage(lang) {
+    if (lang) i18n.changeLanguage(lang);
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +21,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {t("hello")}
         </a>
       </header>
     </div>
